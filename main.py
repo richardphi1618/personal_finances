@@ -52,9 +52,6 @@ def read_all_csv_to_df (dir: str):
     
     return df_master
 
-def transaction_classifier ( df ):
-    return df
-
 def to_upper(oldList):
     newList = []
     for element in oldList:
@@ -108,10 +105,6 @@ if __name__=='__main__':
     output.loc[output['Date'].isnull(),'Date'] = output['Transaction Date']
     output=output.drop(['No.','Transaction Date', 'Posted Date'], axis=1)
     output['Date'] = pd.to_datetime(output['Date'])
-
-    output = transaction_classifier(output)
-
-    
 
     categories = read_yml_as_dict('./categories.yml')
 
