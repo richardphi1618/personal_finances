@@ -51,25 +51,6 @@ def read_all_csv_to_df (dir: str):
     return df_master
 
 def transaction_classifier ( df ):
-    types_of_transactions = {
-        "Shopping": ["AMZ", "Zappos", "KOHL"],
-        "Door Dash": ["DOORDASH"], 
-        "Food": ["PHO", "Zeros", "MCDONALD", "CHICK-FIL-A", "ARBYS", "SONIC", "HARDEES"],
-        "Grocery": ["Kroger", "PUBLIX"], 
-        "ABC_Store": ["VA ABC"],
-        "VideoGames": ["Playstation", "Steam", "STEAMGAMESCOM", "Nintendo", "MicrosoftPC"],
-        "Entertainment": ["THEATER", "FANDANGO", "HLUHulu",  "Spotify", "YouTubePremium"],
-        "HomeImprovement": ["HOMEDEPOT", "LOWES"],
-        "Phone" : ["VZWWRLSSAPOCC"], 
-        "Internet" : ["COMCAST"],
-        "DayCare" : ["MINNIELAND"]
-    }
-
-
-
-
-
-
     return df
 
 if __name__=='__main__':

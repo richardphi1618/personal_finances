@@ -5,8 +5,19 @@ from os import path
 import yaml
 
 
-def find_key(input_dict, value):
-    return {k for k, v in input_dict.items() if v == value}
+def to_upper(oldList):
+    newList = []
+    for element in oldList:
+        newList.append(element.upper())
+    return newList
+
+def find_key(input_dict, target):
+    solutions = []
+    for key, value in input_dict.items():
+        if target.upper() in to_upper(value):
+            solutions.append(key)
+    
+    return solutions
 
 def read_yml_as_dict(file_path: str):
     if path.isfile(file_path):
@@ -18,7 +29,7 @@ def read_yml_as_dict(file_path: str):
         output = yaml.safe_load(input)
     except Exception as e:
         print(str(e))
-        sys.exit(1)
+        sys.exit(1) 
     
     return output
 
@@ -31,7 +42,7 @@ if __name__=='__main__':
 
     print("\n --------------------------- \n")
 
-    print(f'test1 PHO= {find_key(categories, "PHO")}')
+    print(f'test1 = {find_key(categories, "STEAM")}')
 
 
     
