@@ -14,9 +14,10 @@ def to_upper(oldList):
 def find_key(input_dict, target):
     solutions = []
     for key, value in input_dict.items():
-        if target.upper() in to_upper(value):
-            solutions.append(key)
-    
+        for i in to_upper(value):
+            if i in target.upper():
+                solutions.append(key)
+        
     return solutions
 
 def read_yml_as_dict(file_path: str):
@@ -42,7 +43,7 @@ if __name__=='__main__':
 
     print("\n --------------------------- \n")
 
-    print(f'test1 = {find_key(categories, "STEAM")}')
+    print(f'test1 = {find_key(categories, "Amazoncom611WF3KX3 Amzncombill WA")}')
 
 
     
